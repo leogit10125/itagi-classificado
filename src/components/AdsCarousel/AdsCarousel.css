@@ -95,15 +95,46 @@
   width: 16px;
   height: 16px;
 }
-/* Responsividade */
+/* Responsividade - 1 card com borda arredondada */
 @media (max-width: 768px) {
+  .carousel {
+    gap: 16px;
+    padding: 8px 4px;
+  }
+
   .carousel .ad-card {
-    flex: 0 0 200px; /* cards menores em tablets */
+    flex: 0 0 calc(100% - 32px);  /* 1 card com margem nas laterais */
+    margin: 0 16px;                /* espaçamento uniforme */
+    border-radius: 24px;           /* bordas bem arredondadas */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+
+  /* Ajuste das imagens para bordas arredondadas */
+  .carousel .ad-card img {
+    border-radius: 24px 24px 0 0;
+  }
+
+  /* Bolinhas de navegação mais visíveis */
+  .carousel-dots {
+    margin-top: 20px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+  }
+
+  .dot.active {
+    background: #f72585;
+    transform: scale(1.2);
   }
 }
 
 @media (max-width: 480px) {
   .carousel .ad-card {
-    flex: 0 0 160px; /* cards ainda menores em celulares */
+    flex: 0 0 calc(100% - 24px);  /* margem um pouco menor */
+    margin: 0 12px;
+    border-radius: 20px;           /* bordas um pouco menores */
   }
 }
